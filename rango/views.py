@@ -8,7 +8,9 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-	return HttpResponse("Rango says, Hey there partner!")	
+	context_dict = {'boldmessage': "Crunchy, creamy, cookie, candy, cupcake!"}
+	return render(request, 'rango/index.html', context=context_dict)
 
-def test(request):
-	return HttpResponse("This is a test.")
+def about(request):
+	linkback = '<a href="/rango"> Home </a>'
+	return HttpResponse(linkback)
