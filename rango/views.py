@@ -13,4 +13,4 @@ def index(request):
 
 def about(request):
 	linkback = '<a href="/rango"> Home </a>'
-	return HttpResponse(linkback)
+	return render(request, 'rango/about.html')
